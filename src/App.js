@@ -24,6 +24,7 @@ function App() {
           loading={isLoading}
           onClick={() => setIsLoading(!isLoading)}
         />
+        <ListAnimals animals={animals}></ListAnimals>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -54,4 +55,21 @@ function LoadingButton({ onClick, loading, label }) {
   return <button onClick={onClick} type="button">
     {loading ? <div className='loader' /> : label}
   </button>
+}
+
+const animals = [
+  { id: 1, name: 'Apolo gato fofinho 🐈' },
+  { id: 2, name: 'Venus gata danada 🐈' }
+]
+
+function ListAnimals({ animals }) {
+  return <>
+    <ul>
+      {animals && animals.map(({ id, name }) => {
+        return <li key={id}>
+          {name}
+        </li>;
+      })}
+    </ul>
+  </>
 }
