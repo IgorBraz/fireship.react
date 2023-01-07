@@ -6,6 +6,12 @@ import './style.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [value, setValue] = useState('');
+
+  const eventHandler = (e) => {
+    setValue(e.target.value);
+    console.log(e.target);
+  };
 
   return (
     <div className="App">
@@ -25,6 +31,13 @@ function App() {
           onClick={() => setIsLoading(!isLoading)}
         />
         <ListAnimals animals={animals}></ListAnimals>
+        <>
+          <input
+            value={value}
+            placeholder="Enter some text"
+            onChange={eventHandler}
+          />
+        </>
         <a
           className="App-link"
           href="https://reactjs.org"
