@@ -4,7 +4,7 @@ import { CountContext } from './count-context';
 
 class Count extends React.Component {
     render() {
-        const [count] = this.context;
+        const { count } = this.context;
 
         return (<h3>Current count: {count}</h3>);
     }

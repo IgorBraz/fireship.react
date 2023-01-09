@@ -9,9 +9,9 @@ class CountButton extends React.Component {
     }
 
     handleClick() {
-        const [count, setContextCount] = this.context;
+        const { count, setCount } = this.context;
 
-        setContextCount(count + 1);
+        setCount(count + 1);
     }
 
     render() {
