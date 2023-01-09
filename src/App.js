@@ -3,6 +3,7 @@ import './App.css';
 import MyComponent from './MyComponent'
 import React, { useState } from 'react';
 import './style.css';
+import Timer from './Lifecycle and Effects/Timer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,7 @@ function App() {
           <h3>Previous count: {prevCount}</h3>
           <button onClick={handleClick}>Increment</button>
         </>
+        <Timer hr={0} min={0} sec={5}></Timer>
         <a
           className="App-link"
           href="https://reactjs.org"
