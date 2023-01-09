@@ -14,7 +14,6 @@ function App() {
   const [count, setCount] = useState(0);
   const [prevCount, setPrevCount] = useState(0);
 
-
   const handleClick = () => {
     setCount((prev) => {
       setPrevCount(prev);

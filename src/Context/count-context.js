@@ -15,9 +15,11 @@ class CountContextProvider extends React.Component {
     }
 
     render() {
-        return (<CountContext.Provider value={{ count: this.state.count, setCount: this.setCount }}>
-            {this.props.children}
-        </CountContext.Provider>);
+        return (
+            <CountContext.Provider value={{ count: this.state.count, setCount: this.setCount }}>
+                {this.props.children}
+            </CountContext.Provider>
+        );
     }
 }
 
