@@ -8,6 +8,7 @@ import CountContextProvider from './Context/count-context'
 import Count from './Context/Count'
 import CountButton from './Context/CountButton';
 import ErrorBoundary from './Error Boundaries/error-boundary';
+import BrokeComponent from './Error Boundaries/broke-component';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -66,6 +67,7 @@ function App() {
           <h3>Outside the error boundary</h3>
           <ErrorBoundary>
             <h3>Inside the error boundary</h3>
+            <BrokeComponent></BrokeComponent>
           </ErrorBoundary>
         </div>
 
