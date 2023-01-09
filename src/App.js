@@ -4,12 +4,15 @@ import MyComponent from './MyComponent'
 import React, { useState } from 'react';
 import './style.css';
 import Timer from './Lifecycle and Effects/Timer';
+import Context from './Context/Context'
+import { CountContext } from './Context/count-context'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [value, setValue] = useState('');
   const [count, setCount] = useState(0);
   const [prevCount, setPrevCount] = useState(0);
+
 
   const handleClick = () => {
     setCount((prev) => {
@@ -22,6 +25,8 @@ function App() {
     setValue(e.target.value);
     console.log(e.target);
   };
+
+  const [count1, setContextCount] = useState(0);
 
   return (
     <div className="App">
@@ -54,6 +59,9 @@ function App() {
           <button onClick={handleClick}>Increment</button>
         </>
         <Timer hr={0} min={0} sec={5}></Timer>
+        <CountContext.Provider value={[count1, setContextCount]}>
+          <Context count={[count1, setContextCount]}></Context>
+        </CountContext.Provider>
         <a
           className="App-link"
           href="https://reactjs.org"

@@ -29,7 +29,6 @@ class Timer extends React.Component {
     }
 
     componentWillUnmount() {
-        debugger;
         clearInterval(this.ticker);
     }
 
