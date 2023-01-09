@@ -7,6 +7,7 @@ import Timer from './Lifecycle and Effects/Timer';
 import CountContextProvider from './Context/count-context'
 import Count from './Context/Count'
 import CountButton from './Context/CountButton';
+import ErrorBoundary from './Error Boundaries/error-boundary';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -61,6 +62,13 @@ function App() {
           <Count></Count>
           <CountButton></CountButton>
         </CountContextProvider>
+        <div>
+          <h3>Outside the error boundary</h3>
+          <ErrorBoundary>
+            <h3>Inside the error boundary</h3>
+          </ErrorBoundary>
+        </div>
+
         <a
           className="App-link"
           href="https://reactjs.org"
